@@ -1,0 +1,42 @@
+.root {
+    margin: 0 20%;
+}
+
+.timeArea {
+    display: flex;
+    text-align: center;
+}
+
+.inputArea {}
+
+.taskText {}
+
+.taskListContainer{
+    width: 500px;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.taskListHeader {
+    display: flex;
+    width: 500px;
+    margin-bottom: 8px;
+
+}
+.taskListHeader:first-child{
+    margin-bottom: 10px;
+}
+
+.taskListItem {
+    width: 33%;
+}
+
+.startAndEndtime {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.intervalTime {
+    display: inline-block;
+    margin-left: 20px;
+}

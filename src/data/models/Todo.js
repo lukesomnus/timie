@@ -1,7 +1,7 @@
 import DataType from 'sequelize';
 import Model from '../sequelize';
 
-const User = Model.define('Todo', {
+const Todo = Model.define('Todo', {
 
   id: {
     type: DataType.UUID,
@@ -27,4 +27,4 @@ const User = Model.define('Todo', {
 
 });
 
-export default User;
+export default Todo;

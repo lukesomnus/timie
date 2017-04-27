@@ -1,0 +1,6 @@
+{
+  "name": "Potato",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Potato.js"
+}

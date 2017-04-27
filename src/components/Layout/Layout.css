@@ -181,3 +181,7 @@ textarea {
     page-break-after: avoid;
   }
 }
+
+a{
+  text-decoration: none;
+}

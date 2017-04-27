@@ -8,10 +8,12 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import cs from 'classnames';
+import { Card, CardText, CardTitle } from 'material-ui';
+import Link from '../../components/Link'
 import s from './Home.css';
-import ToDoList from '../../components/ToDoList';
+// import ToDoList from '../../components/ToDoList';
 
 class Home extends React.Component {
   // static propTypes = {
@@ -39,7 +41,51 @@ class Home extends React.Component {
       //     ))}
       //   </div>
       // </div>
-      <ToDoList />
+
+      // <ToDoList />
+
+      <div className={cs(s.root, s.pluginGroup)}>
+
+        <div className={s.pluginItem}>
+          <Link to="/plugins/todoList">
+            <Card >
+              <CardTitle title="Todo List" subtitle="Manage your tasks" />
+              <CardText>
+                规划你的任务，记录每一步任务
+          </CardText>
+            </Card>
+          </Link>
+        </div>
+
+        <div className={s.pluginItem}>
+          <Link to="/plugins/timerecorder">
+            <Card >
+              <CardTitle title="Day Record" subtitle="record what you did this day" />
+              <CardText>
+                每天任务时间的总结
+        </CardText>
+            </Card>
+          </Link>
+        </div>
+        <div className={s.pluginItem}>
+          <Link to="/plugins/potato">
+            <Card >
+              <CardTitle title="Pototo Time" subtitle="Card subtitle" />
+              <CardText>
+                🍅番茄时间
+        </CardText>
+            </Card>
+          </Link>
+        </div>
+        <div className={s.pluginItem}>
+          <Card >
+            <CardTitle title="Card title" subtitle="Card subtitle" />
+            <CardText>
+
+            </CardText>
+          </Card>
+        </div>
+      </div>
     );
   }
 }

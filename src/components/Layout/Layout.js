@@ -10,6 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { MuiThemeProvider } from 'material-ui';
 import s from './Layout.css';
 import Header from '../Header';
 import Feedback from '../Feedback';
@@ -22,12 +23,16 @@ class Layout extends React.Component {
 
   render() {
     return (
+
       <div>
         <Header />
-        {this.props.children}
-        {/*<Feedback />
+        <MuiThemeProvider>
+          {this.props.children}
+          {/*<Feedback />
         <Footer />*/}
+        </MuiThemeProvider>
       </div>
+
     );
   }
 }

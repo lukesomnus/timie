@@ -1,22 +1,13 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
+
 
 import React from 'react';
-import createFragment from 'react-addons-create-fragment';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
   RaisedButton,
   TextField,
   Checkbox
 } from 'material-ui';
-import TodoItem from './TodoItem'
+import TodoItem from './TodoItem';
 import s from './ToDoList.css';
 
 // const styles = {
@@ -51,7 +42,7 @@ class ToDoList extends React.Component {
     });
   }
   addTodo() {
-    if(!this.state.todoInputVal) return;
+    if (!this.state.todoInputVal) return;
     const newTodo = {
       text: this.state.todoInputVal,
       isCompleted: false,
@@ -108,23 +99,21 @@ class ToDoList extends React.Component {
     };
 
     return (
-      <MuiThemeProvider >
-        <div className={s.container} >
-          <div className={s.todoInputArea} >
-            <div className={s.todoInput} >
-              <TextField hintText="todo content" style={{ width: 300 }} value={this.state.todoInputVal} onChange={this.todoInputChange} />
-            </div >
-            <RaisedButton label="submit" onClick={this.addTodo} />
+      <div className={s.container} >
+        <div className={s.todoInputArea} >
+          <div className={s.todoInput} >
+            <TextField hintText="todo content" style={{ width: 300 }} value={this.state.todoInputVal} onChange={this.todoInputChange} />
           </div >
-          <div className={s.todoListGroup} >
-            <ul >
-              {
-                this.state.todoItems.map(item => <TodoItem key={item.id} {...item} todoCheck={() => this.checkTodo(item.id)} labelStyleLine={styles.labelStyleLine} editTodo={() => this.editTodo(item.id)} changeTodo={this.changeTodo} deleteTodo={() => this.deleteTodo(item.id)} />)
-              }
-            </ul>
-          </div >
-        </div>
-      </MuiThemeProvider >
+          <RaisedButton label="submit" onClick={this.addTodo} />
+        </div >
+        <div className={s.todoListGroup} >
+          <ul >
+            {
+              this.state.todoItems.map(item => <TodoItem key={item.id} {...item} todoCheck={() => this.checkTodo(item.id)} labelStyleLine={styles.labelStyleLine} editTodo={() => this.editTodo(item.id)} changeTodo={this.changeTodo} deleteTodo={() => this.deleteTodo(item.id)} />)
+            }
+          </ul>
+        </div >
+      </div>
     );
   }
 }
